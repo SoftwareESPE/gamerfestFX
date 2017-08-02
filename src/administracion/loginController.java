@@ -62,7 +62,12 @@ public class loginController implements Initializable, ControledScreen {
             }
             if(usu.getCedula() != null)
                 if(contraseña.compareTo(usu.getContraseña())==0){
-                    SuperAdminController.myController.setScreen(InicioController.screen1ID);
+                    if(usu.getTipo()==1)
+                        SuperAdminController.myController.setScreen(InicioController.screen1ID);
+                    else if(usu.getTipo()==2)
+                        SuperAdminController.myController.setScreen(InicioController.screen2ID);
+                    else
+                        
                     valor = true;
                 }
         }

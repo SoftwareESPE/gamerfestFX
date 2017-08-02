@@ -6,6 +6,7 @@
 package administracion;
 
 import administracion.*;
+import static administracion.loginController.myControllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -25,6 +26,14 @@ import javafx.scene.layout.Pane;
  * @author Marco Macias
  */
 public class AdminController implements Initializable, ControledScreen {
+    private ScreenControled myController;
+    public static ScreenControled myControllers;
+    
+    public void setScreenParent(ScreenControled screenParent){
+        myController = screenParent;
+    }
+    
+    
     @FXML
     private Pane buttonsPanel;
 
@@ -43,7 +52,7 @@ public class AdminController implements Initializable, ControledScreen {
     @FXML
     void Administradores(ActionEvent event) {
         try {
-           AnchorPane panel = FXMLLoader.load(getClass().getResource("Admin.fxml"));
+           AnchorPane panel = FXMLLoader.load(getClass().getResource("PerfilAdministradores.fxml"));
            PanelRoot.getChildren().setAll(panel);
         } catch (IOException ex) {
             Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
@@ -71,14 +80,17 @@ public class AdminController implements Initializable, ControledScreen {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void initialize(URL url, ResourceBundle rb) {
+        myControllers = myController;
+        try {
+           AnchorPane panel = FXMLLoader.load(getClass().getResource("PerfilAdministradores.fxml"));
+           PanelRoot.getChildren().setAll(panel);
+        } catch (IOException ex) {
+            Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }  
 
-    @Override
-    public void setScreenParent(ScreenControled screenPage) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 }

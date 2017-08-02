@@ -28,6 +28,8 @@ public class InicioController implements Initializable, ControledScreen {
     public static String screen0File = "login.fxml";
     public static String screen1ID = "screen1";
     public static String screen1File = "SuperAdmin.fxml";
+    public static String screen2ID = "screen2";
+    public static String screen2File = "Admin.fxml";
     
     public void setScreenParent(ScreenControled screenParent){
         myController = screenParent;
@@ -40,6 +42,7 @@ public class InicioController implements Initializable, ControledScreen {
         ScreenControled mainContainer = new ScreenControled();
         mainContainer.loadScreen(InicioController.screen0ID, InicioController.screen0File);
         mainContainer.loadScreen(InicioController.screen1ID, InicioController.screen1File);
+        mainContainer.loadScreen(InicioController.screen2ID, InicioController.screen2File);
         mainContainer.setScreen(InicioController.screen0ID);
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Group root = new Group();
