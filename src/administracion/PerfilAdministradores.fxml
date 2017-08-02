@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.EditarAdministradoresController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.PerfilAdministradoresController">
    <children>
-      <Label layoutX="79.0" layoutY="49.0" text="Editar Perfil Administrador">
+      <Label layoutX="151.0" layoutY="52.0" text="Perfil Administrador">
          <font>
             <Font size="27.0" />
          </font>
@@ -38,7 +38,7 @@
       <JFXTextField fx:id="txtf_Apellido" layoutX="203.0" layoutY="179.0" />
       <JFXTextField fx:id="txtf_Cedula" layoutX="203.0" layoutY="219.0" />
       <JFXPasswordField fx:id="txtf_Contra" layoutX="203.0" layoutY="262.0" />
-      <JFXButton fx:id="btn_guardad" layoutX="236.0" layoutY="330.0" onAction="#Guardar" style="-fx-background-color: #0a66d6;" text="Guardar" textFill="WHITE" />
+      <JFXButton fx:id="btn_modificar" layoutX="236.0" layoutY="330.0" onAction="#Modificar" style="-fx-background-color: #0a66d6;" text="Modificar" textFill="WHITE" />
      
    </children>
 </AnchorPane>

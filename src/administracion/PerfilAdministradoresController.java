@@ -5,6 +5,7 @@
  */
 package administracion;
 
+import administracion.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -19,12 +20,9 @@ import javafx.fxml.Initializable;
  *
  * @author Marco Macias
  */
-public class EditarAdministradoresController implements Initializable {
+public class PerfilAdministradoresController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
-    @FXML
+     @FXML
     private JFXTextField txtf_nombre;
 
     @FXML
@@ -37,14 +35,16 @@ public class EditarAdministradoresController implements Initializable {
     private JFXPasswordField txtf_Contra;
 
     @FXML
-    private JFXButton btn_guardad;
-     @FXML
-    void Guardar(ActionEvent event) {
+    private JFXButton btn_modificar;
+
+    @FXML
+    void Modificar(ActionEvent event) {
 
     }
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    public void initialize(URL location, ResourceBundle resources) {
+        //Todo
+    }
     
 }

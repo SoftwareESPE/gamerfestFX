@@ -5,6 +5,8 @@
  */
 package administracion;
 
+import administracion.*;
+import administracion.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableView;
 import java.io.IOException;
@@ -16,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -23,34 +26,29 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Marco Macias
  */
-public class OrganizadoresController implements Initializable {
+public class InscripcionesController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
-      @FXML
+    @FXML
     private AnchorPane PanelRoot;
-    
+
     @FXML
     private JFXTreeTableView<?> Table;
 
     @FXML
-    private JFXButton btn_añadir;
+    private JFXButton btn_agregar;
 
     @FXML
-    private JFXButton btn_mod;
+    private JFXButton btn_modificar;
 
     @FXML
     private JFXButton btn_eliminar;
 
     @FXML
-    void Añadir(ActionEvent event) {
-        try {
-           AnchorPane panel = FXMLLoader.load(getClass().getResource("EditarOrganizadores.fxml"));
-           PanelRoot.getChildren().setAll(panel);
-       } catch (IOException ex) {
-           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
-       }
+    void Agregar(ActionEvent event) {
+
     }
 
     @FXML
@@ -60,16 +58,11 @@ public class OrganizadoresController implements Initializable {
 
     @FXML
     void Modificar(ActionEvent event) {
-        try {
-           AnchorPane panel = FXMLLoader.load(getClass().getResource("EditarOrganizadores.fxml"));
-           PanelRoot.getChildren().setAll(panel);
-       } catch (IOException ex) {
-           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
-       }
+
     }
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+    public void initialize(URL location, ResourceBundle resources) {
+        //Todo
+    }
 }

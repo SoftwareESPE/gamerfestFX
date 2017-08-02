@@ -5,6 +5,7 @@
  */
 package administracion;
 
+import administracion.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -23,79 +24,61 @@ import javafx.scene.layout.Pane;
  *
  * @author Marco Macias
  */
-public class SuperAdminController implements Initializable, ControledScreen {
-   @FXML
-    private AnchorPane PanelRoot;
-
+public class AdminController implements Initializable, ControledScreen {
     @FXML
-    private JFXButton btn_superAdmin;
+    private Pane buttonsPanel;
 
     @FXML
     private JFXButton btn_admin;
 
     @FXML
-    private JFXButton btn_organiza;
+    private JFXButton btn_reportes;
 
     @FXML
-    private JFXButton btn_repportes;
-
+    private JFXButton btn_inscripciones;
 
     @FXML
-    void Adminitradores(ActionEvent event) {
+    private AnchorPane PanelRoot;
+
+    @FXML
+    void Administradores(ActionEvent event) {
         try {
-           AnchorPane panel = FXMLLoader.load(getClass().getResource("Administradores.fxml"));
+           AnchorPane panel = FXMLLoader.load(getClass().getResource("Admin.fxml"));
            PanelRoot.getChildren().setAll(panel);
-       } catch (IOException ex) {
-           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
-       }
+        } catch (IOException ex) {
+            Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
 
     @FXML
-    void Organizadores(ActionEvent event) {
+    void Inscripciones(ActionEvent event) {
         try {
-           AnchorPane panel = FXMLLoader.load(getClass().getResource("Organizadores.fxml"));
+           AnchorPane panel = FXMLLoader.load(getClass().getResource("Inscripciones.fxml"));
            PanelRoot.getChildren().setAll(panel);
-       } catch (IOException ex) {
-           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
-       }
-    }
-      @FXML
-    void Reportes(ActionEvent event) {
-        
-    }
-     @FXML
-    void Juegos(ActionEvent event) {
-
+        } catch (IOException ex) {
+            Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
-    void SuperAdmin(ActionEvent event) {
-        System.out.println("Holaa");
-       try {
-           AnchorPane panel = FXMLLoader.load(getClass().getResource("PerfilSuperAdmin.fxml"));
+    void Reportes(ActionEvent event) {
+        try {
+           AnchorPane panel = FXMLLoader.load(getClass().getResource("Reportes.fxml"));
            PanelRoot.getChildren().setAll(panel);
-       } catch (IOException ex) {
-           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
-       }
+        } catch (IOException ex) {
+            Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    public static ScreenControled myController;
-   
-    public void setScreenParent(ScreenControled screenParent){
-        myController = screenParent;
-        
-    }
-    /**
-     * Initializes the controller class.
-     */
-     
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-       try {
-           AnchorPane panel = FXMLLoader.load(getClass().getResource("PerfilSuperAdmin.fxml"));
-           PanelRoot.getChildren().setAll(panel);
-       } catch (IOException ex) {
-           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
-       }
-    }    
+    public void initialize(URL location, ResourceBundle resources) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setScreenParent(ScreenControled screenPage) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }
