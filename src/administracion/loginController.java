@@ -10,26 +10,15 @@ import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import static administracion.InicioController.myController;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import servicios.Conexion;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import static servicios.Conexion.obtener;
-import administracion.ControledScreen;
 import static servicios.Operacion.recuperarUsu;
-import administracion.ScreenControled;
 
 
 /**
@@ -54,32 +43,47 @@ public class loginController implements Initializable, ControledScreen {
     @FXML
     private JFXButton btn_ingre;
     
+    @FXML
+    private Label lbl_mensaje;
     
     @FXML
     void ingresarSistema(ActionEvent event) {
         String usuario, contraseña;
-        boolean valor = true;
-        usuario = txt_usu.getText();
-        contraseña = txt_contra.getText();
+        boolean valor = false;
         Usuario usu = null;
-        try {
-            usu = recuperarUsu(obtener(), usuario);
-        } catch (Exception ex) {
-            valor = false;
-            System.err.println("Error al recuperar datos");
-        }  
-        if(valor)
-            if(usuario.compareTo(usu.getCedula())== 0)
+        if(!txt_usu.getText().isEmpty()){
+            usuario = txt_usu.getText();
+            contraseña = txt_contra.getText();
+            try {
+                usu = recuperarUsu(obtener(), usuario);
+            } catch (Exception ex) {
+                valor = false;
+                System.err.println("Error al recuperar datos");
+            }
+            if(usu.getCedula() != null)
                 if(contraseña.compareTo(usu.getContraseña())==0){
                     SuperAdminController.myController.setScreen(InicioController.screen1ID);
-                }                  
+                    valor = true;
+                }
+        }
+        if(!valor)
+            this.lbl_mensaje.setVisible(true);
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         myControllers = myController;
-    }    
-
-   
+    }  
     
+    @FXML
+    void ocultarMensaje1(MouseEvent event) {
+        if(this.lbl_mensaje.isVisible())
+            this.lbl_mensaje.setVisible(false);
+    }
+
+    @FXML
+    void ocultarMensaje2(MouseEvent event) {
+        if(this.lbl_mensaje.isVisible())
+            this.lbl_mensaje.setVisible(false);
+    }
 }
