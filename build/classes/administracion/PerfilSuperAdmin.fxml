@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" opacity="0.84" prefHeight="403.0" prefWidth="567.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="administracion.PerfilSuperAdminController">
+<AnchorPane id="AnchorPane" fx:id="PanelRoot" nodeOrientation="LEFT_TO_RIGHT" opacity="0.84" prefHeight="403.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.PerfilSuperAdminController">
    <children>
       <Label layoutX="130.0" layoutY="37.0" text="Perfil SuperAdministrador">
          <font>
@@ -37,6 +36,6 @@
       <Label fx:id="label_apellido" layoutX="229.0" layoutY="158.0" prefHeight="27.0" prefWidth="145.0" />
       <Label fx:id="label_cedula" layoutX="229.0" layoutY="198.0" prefHeight="27.0" prefWidth="145.0" />
       <Label fx:id="label_contra" layoutX="229.0" layoutY="241.0" prefHeight="27.0" prefWidth="145.0" />
-      <JFXButton fx:id="btn_modificar" buttonType="RAISED" layoutX="180.0" layoutY="308.0" onAction="#Modificar" ripplerFill="#0a66d6" style="-fx-background-color: #0a66d6;" text="Modificar" />
+      <JFXButton fx:id="btn_modificar" buttonType="RAISED" layoutX="250.0" layoutY="311.0" onAction="#Modificar" ripplerFill="#0a66d6" style="-fx-background-color: #0a66d6;" text="Modificar" />
    </children>
 </AnchorPane>

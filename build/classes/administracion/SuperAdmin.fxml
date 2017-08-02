@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -33,28 +31,28 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <JFXButton alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="1.0" layoutY="44.0" prefHeight="48.0" prefWidth="232.0" ripplerFill="#142f75" text="Super Administrador">
+            <JFXButton fx:id="btn_superAdmin" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="1.0" layoutY="44.0" onAction="#SuperAdmin" prefHeight="48.0" prefWidth="232.0" ripplerFill="#142f75" text="Super Administrador">
                <font>
                   <Font size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="-5.0" layoutY="98.0" prefHeight="48.0" prefWidth="238.0" ripplerFill="#184f97" text="Administradores">
+            <JFXButton fx:id="btn_admin" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="-5.0" layoutY="98.0" onAction="#Adminitradores" prefHeight="48.0" prefWidth="238.0" ripplerFill="#184f97" text="Administradores">
                <font>
                   <Font size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="-1.0" layoutY="152.0" prefHeight="48.0" prefWidth="238.0" text="Organizadores">
+            <JFXButton fx:id="btn_organiza" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="-1.0" layoutY="152.0" onAction="#Organizadores" prefHeight="48.0" prefWidth="238.0" text="Organizadores">
                <font>
                   <Font size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutY="206.0" prefHeight="48.0" prefWidth="238.0" text="Reportes">
+            <JFXButton fx:id="btn_reportes" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutY="206.0" onAction="#Reportes" prefHeight="48.0" prefWidth="238.0" text="Reportes">
                <font>
                   <Font size="19.0" />
                </font>
 
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="1.0" layoutY="259.0" prefHeight="48.0" prefWidth="238.0" text="Reportes">
+            <JFXButton fx:id="btn_juegos" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="1.0" layoutY="259.0" onAction="#Juegos" prefHeight="48.0" prefWidth="238.0" text="Juegos">
                <font>
                   <Font size="19.0" />
                </font>
@@ -66,6 +64,6 @@
             </JFXButton>
          </children>
       </Pane>
-      <Pane layoutX="248.0" layoutY="134.0" opacity="0.74" prefHeight="403.0" prefWidth="567.0" style="-fx-background-color: FFFF;" />
+      <AnchorPane fx:id="PanelRoot" layoutX="244.0" layoutY="132.0" opacity="0.83" prefHeight="403.0" prefWidth="571.0" style="-fx-background-color: #FFFF;" />
    </children>
 </AnchorPane>

@@ -5,9 +5,13 @@
  */
 package administracion;
 
+import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -15,10 +19,17 @@ import javafx.fxml.Initializable;
  * @author Marco Macias
  */
 public class EditarPerfilSuperAdminController implements Initializable {
+    @FXML
+    private AnchorPane PanelRoot;
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private JFXButton btn_guardad;
+
+    @FXML
+    void Guardar(ActionEvent event) {
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

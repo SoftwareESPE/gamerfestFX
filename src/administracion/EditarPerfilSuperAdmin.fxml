@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="administracion.EditarPerfilSuperAdminController">
+<AnchorPane id="AnchorPane" fx:id="PanelRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.EditarPerfilSuperAdminController">
    <children>
       <Label layoutX="69.0" layoutY="39.0" text="Editar Perfil SuperAdministrador">
          <font>
@@ -35,10 +34,10 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btn_modificar" buttonType="RAISED" layoutX="260.0" layoutY="318.0" onAction="#Modificar" ripplerFill="#0a66d6" style="-fx-background-color: #0a66d6;" text="Modificar" />
       <JFXTextField layoutX="193.0" layoutY="127.0" />
       <JFXTextField layoutX="193.0" layoutY="169.0" />
       <JFXTextField layoutX="193.0" layoutY="209.0" />
       <JFXPasswordField layoutX="193.0" layoutY="252.0" />
+      <JFXButton layoutX="235.0" layoutY="323.0" style="-fx-background-color: #0a66d6;" text="Guardar" textFill="WHITE" />
    </children>
 </AnchorPane>

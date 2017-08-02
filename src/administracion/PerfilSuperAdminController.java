@@ -6,12 +6,17 @@
 package administracion;
 
 import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -23,6 +28,9 @@ public class PerfilSuperAdminController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    @FXML
+    private AnchorPane PanelRoot;
      @FXML
     private Label label_Nombre;
 
@@ -40,6 +48,12 @@ public class PerfilSuperAdminController implements Initializable {
 
     @FXML
     void Modificar(ActionEvent event) {
+        try {
+           AnchorPane panel = FXMLLoader.load(getClass().getResource("EditarPerfilSuperAdmin.fxml"));
+           PanelRoot.getChildren().setAll(panel);
+       } catch (IOException ex) {
+           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
+       }
 
     }
 
