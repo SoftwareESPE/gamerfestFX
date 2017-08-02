@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="545.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.InicioController">
+   <children>
+      <ImageView fitHeight="546.0" fitWidth="817.0" layoutX="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../imagenes/1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="249.0" layoutY="406.0" text="Sistema de Control 1.0" textFill="WHITE">
+         <font>
+            <Font name="Noto Sans Bold" size="30.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_iniciar" buttonType="RAISED" layoutX="364.0" layoutY="464.0" onAction="#iniciarSistema" text="INICIAR" textFill="WHITE">
+         <font>
+            <Font name="Noto Sans" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
