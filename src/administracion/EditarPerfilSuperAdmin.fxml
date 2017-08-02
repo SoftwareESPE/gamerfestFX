@@ -38,6 +38,6 @@
       <JFXTextField layoutX="193.0" layoutY="169.0" />
       <JFXTextField layoutX="193.0" layoutY="209.0" />
       <JFXPasswordField layoutX="193.0" layoutY="252.0" />
-      <JFXButton layoutX="235.0" layoutY="323.0" style="-fx-background-color: #0a66d6;" text="Guardar" textFill="WHITE" />
+      <JFXButton fx:id="btn_guardad" layoutX="235.0" layoutY="323.0" onAction="#Guardar" style="-fx-background-color: #0a66d6;" text="Guardar" textFill="WHITE" />
    </children>
 </AnchorPane>

@@ -42,11 +42,22 @@ public class SuperAdminController implements Initializable, ControledScreen {
 
     @FXML
     void Adminitradores(ActionEvent event) {
+        try {
+           AnchorPane panel = FXMLLoader.load(getClass().getResource("Administradores.fxml"));
+           PanelRoot.getChildren().setAll(panel);
+       } catch (IOException ex) {
+           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
+       }
         }
 
     @FXML
     void Organizadores(ActionEvent event) {
-
+        try {
+           AnchorPane panel = FXMLLoader.load(getClass().getResource("Organizadores.fxml"));
+           PanelRoot.getChildren().setAll(panel);
+       } catch (IOException ex) {
+           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
+       }
     }
       @FXML
     void Reportes(ActionEvent event) {
