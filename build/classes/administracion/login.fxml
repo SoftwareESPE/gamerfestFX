@@ -25,12 +25,12 @@
                   <Font name="Noto Sans Bold" size="19.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txt_usu" focusColor="#0a66d6" labelFloat="true" layoutX="48.0" layoutY="118.0" prefHeight="33.0" prefWidth="209.0" promptText="Usuario">
+            <JFXTextField fx:id="txt_usu" focusColor="#0a66d6" labelFloat="true" layoutX="48.0" layoutY="102.0" onMouseClicked="#ocultarMensaje1" prefHeight="33.0" prefWidth="209.0" promptText="Usuario">
                <font>
                   <Font name="Noto Sans" size="18.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="txt_contra" focusColor="#0a66d6" labelFloat="true" layoutX="47.0" layoutY="204.0" prefHeight="24.0" prefWidth="211.0" promptText="Contraseña">
+            <JFXPasswordField fx:id="txt_contra" focusColor="#0a66d6" labelFloat="true" layoutX="47.0" layoutY="188.0" onMouseClicked="#ocultarMensaje2" prefHeight="24.0" prefWidth="211.0" promptText="Contraseña">
                <font>
                   <Font name="Noto Sans" size="18.0" />
                </font>
@@ -43,6 +43,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <Label fx:id="lbl_mensaje" layoutX="47.0" layoutY="234.0" opacity="0.75" prefHeight="16.0" prefWidth="209.0" text="Usuario o contraseña incorrecta" textFill="RED" visible="false" />
          </children>
       </Pane>
       <ImageView fitHeight="197.0" fitWidth="204.0" layoutX="96.0" layoutY="249.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">

@@ -11,20 +11,28 @@ package clases;
  */
 public class Usuario {
     private String nombre, apellido, cedula, contraseña;
-    private int tipo;
+    private int tipo, id;
 
     public Usuario() {
     }
-    
-    
-    public Usuario(String nombre, String apellido, String cedula, String contraseña, int tipo) {
+
+    public Usuario(String nombre, String apellido, String cedula, String contraseña, int tipo, int id) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.contraseña = contraseña;
         this.tipo = tipo;
+        this.id = id;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }   
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
