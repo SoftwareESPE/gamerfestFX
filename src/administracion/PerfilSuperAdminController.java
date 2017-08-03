@@ -5,6 +5,8 @@
  */
 package administracion;
 
+import static administracion.loginController.getUsu;
+import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -59,7 +61,11 @@ public class PerfilSuperAdminController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Usuario usu = getUsu();
+        this.label_Nombre.setText(usu.getNombre());
+        this.label_apellido.setText(usu.getApellido());
+        this.label_cedula.setText(usu.getCedula());
+        this.label_contra.setText("*************");
     }    
     
 }

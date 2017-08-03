@@ -64,6 +64,6 @@
             </JFXButton>
          </children>
       </Pane>
-      <AnchorPane fx:id="PanelRoot" layoutX="244.0" layoutY="132.0" opacity="0.83" prefHeight="403.0" prefWidth="571.0" style="-fx-background-color: #FFFF;" />
+      <AnchorPane fx:id="PanelRoot" accessibleText="nodoParent" layoutX="244.0" layoutY="132.0" opacity="0.83" prefHeight="403.0" prefWidth="571.0" style="-fx-background-color: #FFFF;" />
    </children>
 </AnchorPane>

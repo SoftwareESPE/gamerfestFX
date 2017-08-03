@@ -5,16 +5,27 @@
  */
 package administracion;
 
+
+import static administracion.loginController.getUsu;
 import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import static servicios.Conexion.obtener;
+import static servicios.Operacion.actualizarAdmi;
 
 /**
  * FXML Controller class
@@ -41,12 +52,17 @@ public class EditarAdministradoresController implements Initializable {
     @FXML
     private JFXButton btn_guardad;
      @FXML
-    void Guardar(ActionEvent event) {
-        Usuario usu = new Usuario();    
-        usu.setApellido(this.txtf_Apellido.getText());
-        usu.setCedula(this.txtf_Cedula.getText());
-        usu.setNombre(this.txtf_nombre.getText());
-        usu.setContraseña(this.txtf_Contra.getText());
+    void Guardar(ActionEvent event) throws FileNotFoundException {
+        Usuario usua = getUsu();
+        usua.setApellido(this.txtf_Apellido.getText());
+        usua.setCedula(this.txtf_Cedula.getText());
+        usua.setNombre(this.txtf_nombre.getText());
+        usua.setContraseña(this.txtf_Contra.getText());
+        try {
+            actualizarAdmi(obtener(), usua);
+        } catch (Exception ex) {
+            System.err.println("Error al guardar");;
+        }
     }
     
     @FXML

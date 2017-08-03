@@ -25,7 +25,7 @@ import javafx.scene.layout.Pane;
  */
 public class SuperAdminController implements Initializable, ControledScreen {
    @FXML
-    private AnchorPane PanelRoot;
+    private  AnchorPane PanelRoot;
 
     @FXML
     private JFXButton btn_superAdmin;

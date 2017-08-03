@@ -34,10 +34,10 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="193.0" layoutY="127.0" />
-      <JFXTextField layoutX="193.0" layoutY="169.0" />
-      <JFXTextField layoutX="193.0" layoutY="209.0" />
-      <JFXPasswordField layoutX="193.0" layoutY="252.0" />
+      <JFXTextField fx:id="txt_nombre" layoutX="193.0" layoutY="127.0" onKeyReleased="#activarBoton" />
+      <JFXTextField fx:id="txt_apellido" layoutX="193.0" layoutY="169.0" onKeyReleased="#activarBoton" />
+      <JFXTextField fx:id="txt_cedula_" layoutX="193.0" layoutY="209.0" onKeyReleased="#activarBoton" />
+      <JFXPasswordField fx:id="txt_contraseña" layoutX="193.0" layoutY="252.0" onKeyReleased="#activarBoton" />
       <JFXButton fx:id="btn_guardad" layoutX="235.0" layoutY="323.0" onAction="#Guardar" style="-fx-background-color: #0a66d6;" text="Guardar" textFill="WHITE" />
    </children>
 </AnchorPane>

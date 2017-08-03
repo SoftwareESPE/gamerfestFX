@@ -44,11 +44,10 @@ public class Operacion {
       return per;
    }
     
-   public void actualizarAdmi(Connection conexion, Usuario per, String ci) throws SQLException, FileNotFoundException{
-       String admi = "admin"; 
+   public static void actualizarAdmi(Connection conexion, Usuario per) throws SQLException, FileNotFoundException{ 
        try{
             PreparedStatement consulta = null;   
-            consulta = conexion.prepareStatement("UPDATE usuarios SET usu_nombre = ?, usu_apellido = ?, usu_cedula = ?, usu_contraseña = ? WHERE usu_cedula = '"+ci+"'");
+            consulta = conexion.prepareStatement("UPDATE usuarios SET usu_nombre = ?, usu_apellido = ?, usu_cedula = ?, usu_contraseña = ? WHERE usu_id = '"+per.getId()+"'");
             consulta.setString(1, per.getNombre());
             consulta.setString(2, per.getApellido());
             consulta.setString(3, per.getCedula());

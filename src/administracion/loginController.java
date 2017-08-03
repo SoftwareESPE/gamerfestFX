@@ -6,10 +6,12 @@
 package administracion;
 
 
+import static administracion.InicioController.mainContainer;
 import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import static java.lang.Thread.sleep;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -34,6 +36,8 @@ public class loginController implements Initializable, ControledScreen {
         myController = screenParent;
     }
     
+    private static Usuario usu ;
+    
     @FXML
     private JFXTextField txt_usu;
 
@@ -47,10 +51,9 @@ public class loginController implements Initializable, ControledScreen {
     private Label lbl_mensaje;
     
     @FXML
-    void ingresarSistema(ActionEvent event) {
+    void ingresarSistema(ActionEvent event) throws InterruptedException {
         String usuario, contraseña;
         boolean valor = false;
-        Usuario usu = null;
         if(!txt_usu.getText().isEmpty()){
             usuario = txt_usu.getText();
             contraseña = txt_contra.getText();
@@ -62,8 +65,10 @@ public class loginController implements Initializable, ControledScreen {
             }
             if(usu.getCedula() != null)
                 if(contraseña.compareTo(usu.getContraseña())==0){
-                    if(usu.getTipo()==1)
+                    if(usu.getTipo()==1){
+                        mainContainer.loadScreen(InicioController.screen1ID, InicioController.screen1File);
                         SuperAdminController.myController.setScreen(InicioController.screen1ID);
+                    }
                     else if(usu.getTipo()==2)
                         SuperAdminController.myController.setScreen(InicioController.screen2ID);
                     else
@@ -90,5 +95,13 @@ public class loginController implements Initializable, ControledScreen {
     void ocultarMensaje2(MouseEvent event) {
         if(this.lbl_mensaje.isVisible())
             this.lbl_mensaje.setVisible(false);
+    }
+    
+    public static Usuario getUsu() {
+        return usu;
+    }
+
+    public static void setUsu(Usuario usu) {
+        loginController.usu = usu;
     }
 }
