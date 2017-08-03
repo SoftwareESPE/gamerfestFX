@@ -5,10 +5,14 @@
  */
 package administracion;
 
+import static administracion.loginController.getUsu;
+import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableView;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,7 +45,7 @@ public class ReportesController implements Initializable {
     private JFXButton btn_cancelar;
 
     @FXML
-    private ComboBox<?> cbox_tipo;
+    private ComboBox cbox_tipo;
 
     @FXML
     private JFXButton btn_generar;
@@ -73,6 +77,15 @@ public class ReportesController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //Todo
+        Usuario usu = getUsu();
+        if(usu.getTipo()==1){
+            this.cbox_tipo.getItems().add("Reporte de inscripciones");
+            this.cbox_tipo.getItems().add("Reporte de administradores");
+            this.cbox_tipo.getItems().add("Reporte de resultados finales");
+        }else if(usu.getTipo()==2){
+            this.cbox_tipo.getItems().add("Reporte de administradores");
+        }else if(usu.getTipo()==3){
+            this.cbox_tipo.getItems().add("Reporte de resultados finales");
+        }
     }
 }

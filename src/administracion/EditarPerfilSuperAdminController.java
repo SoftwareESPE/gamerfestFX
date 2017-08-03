@@ -44,13 +44,13 @@ public class EditarPerfilSuperAdminController implements Initializable {
     private JFXPasswordField txt_contraseña;
 
      @FXML
+    
     void activarBoton(KeyEvent event) {
         if(this.txt_nombre.getText().isEmpty() || this.txt_apellido.getText().isEmpty() || this.txt_cedula_.getText().isEmpty() || this.txt_contraseña.getText().isEmpty())
             this.btn_guardad.setDisable(true);
         else
             this.btn_guardad.setDisable(false);
     }
-    
     @FXML
     void Guardar(ActionEvent event) {
         Usuario usua = getUsu();

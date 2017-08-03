@@ -76,6 +76,13 @@ public class EditarAdministradoresController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.btn_guardad.setDisable(true);
+        Usuario usu = getUsu();
+        if(usu.getTipo()==2){
+            this.txtf_nombre.setText(usu.getNombre());
+            this.txtf_Apellido.setText(usu.getApellido());
+            this.txtf_Cedula.setText(usu.getCedula());
+            this.txtf_Contra.setText(usu.getContraseña());
+        }
     }    
     
 }
