@@ -11,7 +11,6 @@ import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import static java.lang.Thread.sleep;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -23,10 +22,6 @@ import static servicios.Conexion.obtener;
 import static servicios.Operacion.recuperarUsu;
 
 
-/**
- *
- * @author josue
- */
 public class loginController implements Initializable, ControledScreen {
     
     private ScreenControled myController;

@@ -18,11 +18,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
-/**
- * FXML Controller class
- *
- * @author Marco Macias
- */
 public class AdminController implements Initializable, ControledScreen {
         
     @FXML

@@ -18,11 +18,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author Marco Macias
- */
 public class AdministradoresController implements Initializable {
 
     /**

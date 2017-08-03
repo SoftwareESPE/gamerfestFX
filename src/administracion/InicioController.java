@@ -16,11 +16,6 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author josue
- */
 public class InicioController implements Initializable, ControledScreen {
     
     public static ScreenControled myController;

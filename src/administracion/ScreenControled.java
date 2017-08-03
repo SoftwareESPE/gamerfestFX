@@ -19,10 +19,6 @@ import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
-/**
- *
- * @author Marco Macias
- */
 public class ScreenControled extends StackPane{
     private HashMap<String, Node> screens = new HashMap<>(); 
 

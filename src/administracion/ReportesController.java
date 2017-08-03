@@ -11,18 +11,18 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableView;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
-
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.*;
+import java.io.FileOutputStream;
 /**
  * FXML Controller class
  *
- * @author Marco Macias
+ * 
  */
 public class ReportesController implements Initializable {
 
@@ -57,7 +57,31 @@ public class ReportesController implements Initializable {
 
     @FXML
     void Generar(ActionEvent event) {
-
+        Document documento = new Document();
+        FileOutputStream ficheroPdf;
+        String ruta = null;
+        try 
+        {
+            if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de inscripciones")){
+                ruta="D:\\Reporte_inscripciones.PDF";
+            }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de administradores")){
+                ruta="D:\\Reporte_administradores.PDF";
+            }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de resultados finales")){
+                ruta="D:\\Reporte_resultado_final.PDF";
+            }
+            ficheroPdf = new FileOutputStream(ruta);
+            PdfWriter.getInstance(documento,ficheroPdf).setInitialLeading(20);
+        }
+        catch (Exception ex){
+            System.out.println(ex.toString());
+        }
+        try{
+            documento.open();
+                //aqui agregamos todo el contenido del PDF...
+            documento.close();
+        }catch(Exception ex){
+            System.out.println(ex.toString());
+        }
     }
 
     @FXML

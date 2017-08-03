@@ -27,11 +27,6 @@ import javafx.scene.layout.AnchorPane;
 import static servicios.Conexion.obtener;
 import static servicios.Operacion.actualizarAdmi;
 
-/**
- * FXML Controller class
- *
- * @author Marco Macias
- */
 public class EditarAdministradoresController implements Initializable {
 
     /**

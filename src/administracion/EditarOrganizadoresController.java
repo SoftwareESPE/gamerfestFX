@@ -14,11 +14,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-/**
- * FXML Controller class
- *
- * @author Marco Macias
- */
 public class EditarOrganizadoresController implements Initializable {
 
     /**

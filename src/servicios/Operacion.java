@@ -19,10 +19,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
-/**
- *
- * @author josue
- */
 public class Operacion {
     public static Usuario recuperarUsu(Connection conexion, String ci) throws SQLException {
       Usuario per = new Usuario();

@@ -5,10 +5,6 @@
  */
 package administracion;
 
-/**
- *
- * @author Marco Macias
- */
 public interface ControledScreen {
       public void setScreenParent(ScreenControled screenPage);
 }
