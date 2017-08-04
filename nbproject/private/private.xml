@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/Enfrentamientos.fxml</file>
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/test/EditarOrganizadores.fxml</file>
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/CuartosController.java</file>
@@ -28,6 +29,10 @@
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/ScreenControled.java</file>
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/PrincipalOrganizadores.fxml</file>
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/OrganizadoresController.java</file>
+=======
+            <file>file:/D:/Proyecto/gamerfestFX/src/administracion/InscripcionesController.java</file>
+            <file>file:/D:/Proyecto/gamerfestFX/src/administracion/ReportesController.java</file>
+>>>>>>> bc20be74474d48dedc416db88635905ae4c038d4
         </group>
     </open-files>
 </project-private>
