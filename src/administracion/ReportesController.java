@@ -19,6 +19,8 @@ import javafx.scene.layout.AnchorPane;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 import java.io.FileOutputStream;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 /**
  * FXML Controller class
  *
@@ -49,6 +51,8 @@ public class ReportesController implements Initializable {
 
     @FXML
     private JFXButton btn_generar;
+    
+    ObservableList<Inscripciones> Lista;
 
     @FXML
     void Cancelar(ActionEvent event) {
@@ -77,14 +81,36 @@ public class ReportesController implements Initializable {
         }
         try{
             documento.open();
+            Font fuente= new Font();
+            fuente.setSize(35);
                 if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de inscripciones")){
-                    documento.addTitle("Reporte de inscripciones");
+                    Paragraph Titulo = new Paragraph("Reporte de inscripciones", fuente);
+                    Titulo.setAlignment(1);
+                    documento.add(Titulo);
+                    documento.add(new Paragraph(" "));
+                    documento.add(new Paragraph(" "));
+                    documento.add(new Paragraph(" "));
+                    PdfPTable tabla = new PdfPTable(5);
+                    tabla.addCell("NOMBRE");
+                    tabla.addCell("APELLIDO");
+                    tabla.addCell("FECHA DE INSCRIPCION");
+                    tabla.addCell("JUEGO");
+                    tabla.addCell("VALOR");
+                    for(int x=0; x<this.Lista.size();x++){
+                        tabla.addCell(this.Lista.get(x).getNombre());
+                        tabla.addCell(this.Lista.get(x).getApellido());
+                        tabla.addCell(this.Lista.get(x).getFecha());
+                        tabla.addCell(this.Lista.get(x).getJuego());
+                        tabla.addCell(this.Lista.get(x).getValor());
+                    }
+                    documento.add(tabla);
                 }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de administradores")){
                     documento.addTitle("Reporte de administradores");
                 }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de resultados finales")){
                     documento.addTitle("Reporte de resultados finales");
                 }
             documento.close();
+            
         }catch(Exception ex){
             System.out.println(ex.toString());
         }
@@ -112,6 +138,8 @@ public class ReportesController implements Initializable {
             this.cbox_tipo.getItems().add("Reporte de inscripciones");
             this.cbox_tipo.getItems().add("Reporte de administradores");
             this.cbox_tipo.getItems().add("Reporte de resultados finales");
+            this.Lista = FXCollections.observableArrayList();
+            InscripcionesController.llenarInformacion(servicios.Conexion.getCnx(), Lista);
         }else if(usu.getTipo()==2){
             this.cbox_tipo.getItems().add("Reporte de administradores");
         }else if(usu.getTipo()==3){

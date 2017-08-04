@@ -85,7 +85,7 @@ public class InscripcionesController implements Initializable {
                                             resultado.getInt("usuarios_usu_id"),
                                             resultado.getInt("juegos_jue_id"),
                                             resultado.getString("jue_nombre"),
-                                            resultado.getFloat("jue_valor")));
+                                            resultado.getString("jue_valor")));
             }
         }catch(SQLException ex){
             ex.printStackTrace();

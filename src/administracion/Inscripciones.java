@@ -19,9 +19,9 @@ public class Inscripciones implements Serializable{
     private int usu_id;
     private int juego_id;
     private String juego;
-    private float valor;
+    private String valor;
 
-    public Inscripciones(int ID, String nombre, String apellido, String fecha, int usu_id, int juego_id, String juego, float valor) {
+    public Inscripciones(int ID, String nombre, String apellido, String fecha, int usu_id, int juego_id, String juego, String valor) {
         this.ID = ID;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -44,13 +44,13 @@ public class Inscripciones implements Serializable{
         this.juego = juego;
     }
 
-    public void setValor(float valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
     
     
 
-    public float getValor() {
+    public String getValor() {
         return valor;
     }
     
