@@ -90,7 +90,7 @@ public class Operacion {
        try{
             
             Statement statement = conector.createStatement();
-            ResultSet resultado = statement.executeQuery("SELECT usu_id, usu_nombre, usu_apellido, usu_cedula, usu_contraseña, tipo_usuario_tip_id FROM usuarios");            
+            ResultSet resultado = statement.executeQuery("SELECT usu_id, usu_nombre, usu_apellido, usu_cedula, usu_contraseña, tipo_usuario_tip_id FROM usuarios WHERE tipo_usuario_tip_id = '"+2+"'");            
             while(resultado.next()){
                 lista.add(new Usuario(resultado.getString("usu_nombre"),resultado.getString("usu_apellido"),                                 
                                       resultado.getString("usu_cedula"),resultado.getString("usu_contraseña"),
