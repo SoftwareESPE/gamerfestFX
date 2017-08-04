@@ -8,7 +8,15 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="GamefestFx.jar" size="6140417" download="eager" />
+=======
+<<<<<<< HEAD
+    <jar href="GamefestFx.jar" size="6629171" download="eager" />
+=======
+    <jar href="GamefestFx.jar" size="6140031" download="eager" />
+>>>>>>> bc20be74474d48dedc416db88635905ae4c038d4
+>>>>>>> 7bc4b361e1ffa62325638d47d8bdf260e0b2b125
     <jar href="lib\eclipselink.jar" size="8478776" download="eager" />
     <jar href="lib\itextpdf-5.3.2.jar" size="1775528" download="eager" />
     <jar href="lib\javax.persistence_2.1.0.v201304241213.jar" size="164637" download="eager" />

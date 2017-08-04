@@ -85,10 +85,18 @@ public class InscripcionesController implements Initializable {
                                             resultado.getInt("usuarios_usu_id"),
                                             resultado.getInt("juegos_jue_id"),
                                             resultado.getString("jue_nombre"),
+<<<<<<< HEAD
                                             resultado.getString("jue_valor"),
                                             resultado.getString("usu_nombre"),
                                             resultado.getString("usu_apellido"),
                                             resultado.getString("usu_cedula")));
+=======
+<<<<<<< HEAD
+                                            resultado.getFloat("jue_valor")));
+=======
+                                            resultado.getString("jue_valor")));
+>>>>>>> bc20be74474d48dedc416db88635905ae4c038d4
+>>>>>>> 7bc4b361e1ffa62325638d47d8bdf260e0b2b125
             }
         }catch(SQLException ex){
             ex.printStackTrace();

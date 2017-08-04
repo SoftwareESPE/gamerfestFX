@@ -81,6 +81,10 @@ public class ReportesController implements Initializable {
         }
         try{
             documento.open();
+<<<<<<< HEAD
+                if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de inscripciones")){
+                    documento.addTitle("Reporte de inscripciones");
+=======
             Font fuente= new Font();
             fuente.setSize(35);
                 if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de inscripciones")){
@@ -108,6 +112,7 @@ public class ReportesController implements Initializable {
                     documento.add(new Paragraph("Dinero Recaudado: "+total));
                     documento.add(new Paragraph(" "));
                     documento.add(tabla);
+>>>>>>> bc20be74474d48dedc416db88635905ae4c038d4
                 }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de administradores")){
                     Paragraph Titulo = new Paragraph("Reporte de administradores", fuente);
                     Titulo.setAlignment(1);

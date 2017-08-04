@@ -68,6 +68,15 @@ public class loginController implements Initializable, ControledScreen {
                     else if(usu.getTipo()==2){
                         mainContainer.loadScreen(InicioController.screen2ID, InicioController.screen2File);
                         AdminController.myController.setScreen(InicioController.screen2ID);
+                    }//Ingresar a organizadores @Alejo
+                    else if(usu.getTipo()==3){
+                        try {
+                            mainContainer.loadScreen(InicioController.screen3ID, InicioController.screen3File);
+                        PrincipalOrganizadoresController.myController.setScreen(InicioController.screen3ID);
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
+                        
                     }
                     else
                         
