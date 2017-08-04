@@ -53,7 +53,7 @@ public class ReportesController implements Initializable {
     private JFXButton btn_generar;
     
     ObservableList<Inscripciones> Lista;
-    ObservableList<Inscripciones> Usuarios;
+    ObservableList<clases.Usuario> Usuarios;
 
     @FXML
     void Cancelar(ActionEvent event) {
@@ -117,8 +117,7 @@ public class ReportesController implements Initializable {
                         documento.add(new Paragraph(" "));
                         documento.add(new Paragraph(" "));
                         PdfPTable tabla = new PdfPTable(5);
-                        documento.add(new Paragraph(this.Lista.get(i).getNom_usu()));
-                        documento.add(new Paragraph(this.Lista.get(i).getApellido_usu()));
+                        documento.add(new Paragraph(this.Usuarios.get(i).getNombre()+" "+this.Usuarios.get(i).getApellido()));
                         tabla.addCell("NOMBRE");
                         tabla.addCell("APELLIDO");
                         tabla.addCell("FECHA DE INSCRIPCION");
@@ -126,7 +125,7 @@ public class ReportesController implements Initializable {
                         tabla.addCell("VALOR");
                         int total=0,inscritos=0;
                         for(int x=0; x<this.Lista.size();x++){
-                            if(this.Lista.get(i).getUsu_id()==this.Lista.get(x).getUsu_id()){
+                            if(this.Usuarios.get(i).getId()==this.Lista.get(x).getUsu_id()){
                                 tabla.addCell(this.Lista.get(x).getNombre());
                                 tabla.addCell(this.Lista.get(x).getApellido());
                                 tabla.addCell(this.Lista.get(x).getFecha());
@@ -169,16 +168,16 @@ public class ReportesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Usuario usu = getUsu();
+        this.Usuarios = FXCollections.observableArrayList();
+        this.Usuarios = servicios.Operacion.tablaAdminis(servicios.Conexion.getCnx(), Usuarios);
+        this.Lista = FXCollections.observableArrayList();
+        InscripcionesController.llenarInformacion(servicios.Conexion.getCnx(), Lista);
         if(usu.getTipo()==1){
             this.cbox_tipo.getItems().add("Reporte de inscripciones");
             this.cbox_tipo.getItems().add("Reporte de administradores");
             this.cbox_tipo.getItems().add("Reporte de resultados finales");
-            this.Lista = FXCollections.observableArrayList();
-            InscripcionesController.llenarInformacion(servicios.Conexion.getCnx(), Lista);
         }else if(usu.getTipo()==2){
             this.cbox_tipo.getItems().add("Reporte de administradores");
-            this.Usuarios = FXCollections.observableArrayList();
-            //clases.Usuario.llenarInformacion(servicios.Conexion.getCnx(),);
         }else if(usu.getTipo()==3){
             this.cbox_tipo.getItems().add("Reporte de resultados finales");
         }
