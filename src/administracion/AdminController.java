@@ -6,6 +6,7 @@
 package administracion;
 
 import static administracion.EditarAdministradoresController.setMenuAdmin;
+import static administracion.InicioController.mainContainer;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -70,6 +71,16 @@ public class AdminController implements Initializable, ControledScreen {
     
     public void setScreenParent(ScreenControled screenParent){
         myController = screenParent;
+    }
+    
+    @FXML
+    void Salir(ActionEvent event) {
+        try {
+                        mainContainer.loadScreen(InicioController.screen4ID, InicioController.screen4File);
+                        AdminController.myController.setScreen(InicioController.screen4ID);
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
     }
     
     @Override
