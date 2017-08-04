@@ -12,26 +12,26 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import static servicios.Conexion.obtener;
 import static servicios.Operacion.actualizarAdmi;
+import static servicios.Operacion.guardarPersona;
+import static servicios.Validacion.validarLetras;
+import static servicios.Validacion.validarNumero;
 
 public class EditarAdministradoresController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
+    private static int menuAdmin;
+    
     @FXML
     private JFXTextField txtf_nombre;
 
@@ -46,18 +46,36 @@ public class EditarAdministradoresController implements Initializable {
 
     @FXML
     private JFXButton btn_guardad;
+    
+    @FXML
+    private Label lbl_mensaje;
+     
      @FXML
     void Guardar(ActionEvent event) throws FileNotFoundException {
-        Usuario usua = getUsu();
+        Usuario usua =  getUsu();
         usua.setApellido(this.txtf_Apellido.getText());
         usua.setCedula(this.txtf_Cedula.getText());
         usua.setNombre(this.txtf_nombre.getText());
         usua.setContraseña(this.txtf_Contra.getText());
-        try {
-            actualizarAdmi(obtener(), usua);
-        } catch (Exception ex) {
-            System.err.println("Error al guardar");;
+        if(menuAdmin==0){
+            try {
+                actualizarAdmi(obtener(), usua);
+            } catch (Exception ex) {
+                System.err.println("Error al guardar");;
+            }
+        }            
+        else{
+            usua.setTipo(2);
+            try{
+                guardarPersona(obtener(), usua);
+            }catch (Exception ex) {
+                System.err.println("Error al guardar");;
+            }
+            
         }
+             
+        
+            
     }
     
     @FXML
@@ -71,13 +89,25 @@ public class EditarAdministradoresController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.btn_guardad.setDisable(true);
-        Usuario usu = getUsu();
-        if(usu.getTipo()==2){
+        if(menuAdmin==0){
+            Usuario usu = getUsu();
             this.txtf_nombre.setText(usu.getNombre());
             this.txtf_Apellido.setText(usu.getApellido());
             this.txtf_Cedula.setText(usu.getCedula());
             this.txtf_Contra.setText(usu.getContraseña());
-        }
-    }    
+        }else{
+            this.lbl_mensaje.setText("Agregar Administrador");
+        }        
+        validarLetras(this.txtf_Apellido);
+        validarLetras(this.txtf_nombre);
+        validarNumero(this.txtf_Cedula);
+        
+    }   
+
+    public static void setMenuAdmin(int menuAdmin) {
+        EditarAdministradoresController.menuAdmin = menuAdmin;
+    }
+    
+    
     
 }

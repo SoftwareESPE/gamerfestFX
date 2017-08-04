@@ -20,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import static servicios.Conexion.obtener;
 import static servicios.Operacion.recuperarUsu;
+import static servicios.Validacion.validarNumero;
 
 
 public class loginController implements Initializable, ControledScreen {
@@ -80,6 +81,7 @@ public class loginController implements Initializable, ControledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         myControllers = myController;
+        validarNumero(this.txt_usu);
     }  
     
     @FXML

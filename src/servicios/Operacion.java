@@ -55,4 +55,31 @@ public class Operacion {
             throw new SQLException(ex);
       }
     }
+   
+   public static void guardarPersona(Connection conexion, Usuario per) throws SQLException, FileNotFoundException{
+        try{
+            PreparedStatement consulta = null;   
+            consulta = conexion.prepareStatement("INSERT INTO usuarios (usu_nombre, usu_apellido, usu_cedula, usu_contraseña, tipo_usuario_tip_id, administrador_adm_id) " + "VALUES(?, ?, ?, ?, ?, ?)");
+            consulta.setString(1, per.getNombre());
+            consulta.setString(2, per.getApellido());
+            consulta.setString(3, per.getCedula());
+            consulta.setString(4, per.getContraseña());
+            consulta.setInt(5, per.getTipo());
+            consulta.setInt(6, per.getTipo());
+            consulta.executeUpdate();
+            consulta.close();
+        }catch(Exception ex){
+            System.out.println("Error al guardar");            
+        }
+         
+    }
+   
+   public static void eliminarUsuario(Connection conexion, Usuario per) throws SQLException{
+       try{
+         PreparedStatement consulta = conexion.prepareStatement("DELETE FROM ususarios WHERE usu_id = '"+per.getId()+"'");
+         consulta.executeUpdate();
+       }catch(SQLException ex){
+         throw new SQLException(ex);
+      }
+   }
 }

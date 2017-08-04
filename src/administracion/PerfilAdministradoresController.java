@@ -5,6 +5,7 @@
  */
 package administracion;
 
+import static administracion.EditarAdministradoresController.setMenuAdmin;
 import static administracion.loginController.getUsu;
 import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
@@ -43,6 +44,7 @@ public class PerfilAdministradoresController implements Initializable {
     @FXML
     void Modificar(ActionEvent event) {
         try {
+           setMenuAdmin(0);
            AnchorPane panel = FXMLLoader.load(getClass().getResource("EditarAdministradores.fxml"));
            PanelRoot.getChildren().setAll(panel);
         } catch (IOException ex) {

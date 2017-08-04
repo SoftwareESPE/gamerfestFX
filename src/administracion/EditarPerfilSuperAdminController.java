@@ -19,6 +19,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import static servicios.Conexion.obtener;
 import static servicios.Operacion.actualizarAdmi;
+import static servicios.Validacion.validarLetras;
+import static servicios.Validacion.validarNumero;
 
 public class EditarPerfilSuperAdminController implements Initializable {
     @FXML
@@ -67,6 +69,10 @@ public class EditarPerfilSuperAdminController implements Initializable {
         this.txt_apellido.setText(usu.getApellido());
         this.txt_cedula_.setText(usu.getCedula());
         this.txt_contraseña.setText(usu.getContraseña());
-    }    
+        validarLetras(this.txt_apellido);
+        validarLetras(this.txt_nombre);
+        validarNumero(this.txt_cedula_);
+    } 
+    
     
 }
