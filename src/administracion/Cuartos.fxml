@@ -106,5 +106,10 @@
       </JFXButton>
       <Separator layoutX="138.0" layoutY="106.0" orientation="VERTICAL" prefHeight="63.0" prefWidth="6.0" style="-fx-background-color: BLACK;" />
       <Separator layoutX="412.0" layoutY="108.0" orientation="VERTICAL" prefHeight="63.0" prefWidth="6.0" style="-fx-background-color: BLACK;" />
+      <JFXButton alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="31.0" layoutY="27.0" prefHeight="42.0" prefWidth="91.0" ripplerFill="#144586" style="-fx-background-color: WHITE;" text="Volver">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

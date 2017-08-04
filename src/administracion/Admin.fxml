@@ -47,7 +47,7 @@
                   <Font size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="6.0" layoutY="355.0" prefHeight="42.0" prefWidth="69.0" ripplerFill="#144586" text="Salir">
+            <JFXButton alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="6.0" layoutY="355.0" onAction="#Salir" prefHeight="42.0" prefWidth="69.0" ripplerFill="#144586" text="Salir">
                <font>
                   <Font size="19.0" />
                </font>

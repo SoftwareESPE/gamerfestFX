@@ -5,6 +5,7 @@
  */
 package administracion;
 
+import static administracion.InicioController.mainContainer;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -88,6 +89,16 @@ public class SuperAdminController implements Initializable, ControledScreen {
      * Initializes the controller class.
      */
      
+    @FXML
+    void Salir(ActionEvent event) {
+        try {
+                        mainContainer.loadScreen(InicioController.screen4ID, InicioController.screen4File);
+                        SuperAdminController.myController.setScreen(InicioController.screen4ID);
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        try {
