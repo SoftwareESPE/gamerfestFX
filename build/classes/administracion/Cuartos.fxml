@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="PanelRoot" prefHeight="403.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.CuartosController">
+   <children>
+      <Separator layoutX="409.0" layoutY="196.0" prefHeight="8.0" prefWidth="112.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="304.0" layoutY="196.0" prefHeight="8.0" prefWidth="112.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="131.0" layoutY="196.0" prefHeight="8.0" prefWidth="112.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="29.0" layoutY="196.0" prefHeight="8.0" prefWidth="112.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="304.0" layoutY="108.0" prefHeight="8.0" prefWidth="112.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="139.0" layoutY="106.0" prefHeight="8.0" prefWidth="112.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="515.0" layoutY="196.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="0.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="301.0" layoutY="196.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="0.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="238.0" layoutY="196.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="0.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="28.0" layoutY="196.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="0.0" style="-fx-background-color: BLACK;" />
+      <Label layoutX="184.0" layoutY="14.0" text="Enfrentamientos">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_jugador1" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="46.0" layoutY="278.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Jugador 1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_jugador5" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="46.0" layoutY="309.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Jugador 5">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_jugador2" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="184.0" layoutY="278.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Jugador 2">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_jugador6" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="184.0" layoutY="309.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Jugador 6">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_jugador3" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="320.0" layoutY="278.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Jugador 3">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_jugador7" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="320.0" layoutY="309.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Jugador 7">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_jugador4" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="453.0" layoutY="278.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Jugador 4">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_jugador8" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="453.0" layoutY="309.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Jugador 8">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_semi1" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="112.0" layoutY="171.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Ganador C1" />
+      <JFXButton fx:id="btn_semi2" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="112.0" layoutY="202.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Ganador C2" />
+      <JFXButton fx:id="btn_semi3" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="380.0" layoutY="171.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Ganador C3" />
+      <JFXButton fx:id="btn_semi4" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="380.0" layoutY="202.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Ganador C4" />
+      <JFXButton fx:id="btn_final1" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="251.0" layoutY="80.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Ganador S1" />
+      <JFXButton fx:id="btn_final2" alignment="TOP_LEFT" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="BOTTOM" layoutX="251.0" layoutY="111.0" prefHeight="31.0" prefWidth="91.0" ripplerFill="#184f97" style="-fx-background-color: POWDERBLUE;" text="Ganador S2" />
+      <JFXButton fx:id="btn_admin8" alignment="BASELINE_CENTER" blendMode="SRC_ATOP" buttonType="RAISED" layoutX="16.0" layoutY="278.0" prefHeight="63.0" prefWidth="30.0" ripplerFill="#184f97" style="-fx-background-color: LIGHTSEAGREEN;" text="C1">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_admin81" alignment="BASELINE_CENTER" blendMode="SRC_ATOP" buttonType="RAISED" layoutX="154.0" layoutY="278.0" prefHeight="63.0" prefWidth="30.0" ripplerFill="#184f97" style="-fx-background-color: LIGHTSEAGREEN;" text="C2">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_admin82" alignment="BASELINE_CENTER" blendMode="SRC_ATOP" buttonType="RAISED" layoutX="289.0" layoutY="278.0" prefHeight="63.0" prefWidth="30.0" ripplerFill="#184f97" style="-fx-background-color: LIGHTSEAGREEN;" text="C3">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_admin83" alignment="BASELINE_CENTER" blendMode="SRC_ATOP" buttonType="RAISED" layoutX="426.0" layoutY="278.0" prefHeight="63.0" prefWidth="30.0" ripplerFill="#184f97" style="-fx-background-color: LIGHTSEAGREEN;" text="C4">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_admin84" alignment="BASELINE_CENTER" blendMode="SRC_ATOP" buttonType="RAISED" layoutX="82.0" layoutY="170.0" prefHeight="63.0" prefWidth="30.0" ripplerFill="#184f97" style="-fx-background-color: LIGHTSEAGREEN;" text="S1">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_admin85" alignment="BASELINE_CENTER" blendMode="SRC_ATOP" buttonType="RAISED" layoutX="351.0" layoutY="171.0" prefHeight="63.0" prefWidth="30.0" ripplerFill="#184f97" style="-fx-background-color: LIGHTSEAGREEN;" text="S2">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_admin86" alignment="BASELINE_CENTER" blendMode="SRC_ATOP" buttonType="RAISED" contentDisplay="RIGHT" layoutX="203.0" layoutY="80.0" prefHeight="63.0" prefWidth="48.0" ripplerFill="#184f97" style="-fx-background-color: LIGHTSEAGREEN;" text="FINAL">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </JFXButton>
+      <Separator layoutX="138.0" layoutY="106.0" orientation="VERTICAL" prefHeight="63.0" prefWidth="6.0" style="-fx-background-color: BLACK;" />
+      <Separator layoutX="412.0" layoutY="108.0" orientation="VERTICAL" prefHeight="63.0" prefWidth="6.0" style="-fx-background-color: BLACK;" />
+   </children>
+</AnchorPane>

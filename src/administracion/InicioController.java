@@ -25,6 +25,11 @@ public class InicioController implements Initializable, ControledScreen {
     public static String screen1File = "SuperAdmin.fxml";
     public static String screen2ID = "screen2";
     public static String screen2File = "Admin.fxml";
+    
+    public static String screen3ID = "screen3";
+    public static String screen3File = "PrincipalOrganizadores.fxml";
+    public static String screen4ID = "screen4";
+    public static String screen4File = "Inicio.fxml";
     public static ScreenControled mainContainer = new ScreenControled();
     
     public void setScreenParent(ScreenControled screenParent){
