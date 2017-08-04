@@ -16,11 +16,6 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author josue
- */
 public class InicioController implements Initializable, ControledScreen {
     
     public static ScreenControled myController;
@@ -42,7 +37,6 @@ public class InicioController implements Initializable, ControledScreen {
     void iniciarSistema(ActionEvent event) {
         
         mainContainer.loadScreen(InicioController.screen0ID, InicioController.screen0File);
-        mainContainer.loadScreen(InicioController.screen2ID, InicioController.screen2File);
         mainContainer.setScreen(InicioController.screen0ID);
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Group root = new Group();

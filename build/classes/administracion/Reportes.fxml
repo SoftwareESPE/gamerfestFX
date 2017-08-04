@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="PanelRoot" prefHeight="403.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.ReportesController">
@@ -23,7 +24,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbox_tipo" layoutX="175.0" layoutY="75.0" onAction="#Tipo" prefHeight="25.0" prefWidth="188.0" />
       <JFXButton fx:id="btn_generar" layoutX="433.0" layoutY="75.0" onAction="#Generar" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #0a66d6;" text="Generar" textFill="WHITE" />
+      <VBox layoutX="165.0" layoutY="75.0" />
+      <ComboBox fx:id="cbox_tipo" layoutX="195.0" layoutY="75.0" prefHeight="25.0" prefWidth="182.0" promptText="Seleccione:" />
    </children>
 </AnchorPane>

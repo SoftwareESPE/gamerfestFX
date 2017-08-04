@@ -5,46 +5,60 @@
  */
 package administracion;
 
-import administracion.*;
+import static administracion.EditarAdministradoresController.setMenuAdmin;
+import static administracion.loginController.getUsu;
+import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author Marco Macias
- */
 public class PerfilAdministradoresController implements Initializable {
 
-     @FXML
-    private JFXTextField txtf_nombre;
-
     @FXML
-    private JFXTextField txtf_Apellido;
-
-    @FXML
-    private JFXTextField txtf_Cedula;
-
-    @FXML
-    private JFXPasswordField txtf_Contra;
-
+    private AnchorPane PanelRoot;
+    
     @FXML
     private JFXButton btn_modificar;
 
     @FXML
+    private Label label_nombre;
+
+    @FXML
+    private Label label_apellido;
+
+    @FXML
+    private Label label_cedula;
+
+    @FXML
+    private Label label_contraseña;
+
+    @FXML
     void Modificar(ActionEvent event) {
-
+        try {
+           setMenuAdmin(0);
+           AnchorPane panel = FXMLLoader.load(getClass().getResource("EditarAdministradores.fxml"));
+           PanelRoot.getChildren().setAll(panel);
+        } catch (IOException ex) {
+           Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
+    
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        //Todo
+    public void initialize(URL url, ResourceBundle rb) {
+        Usuario usu = getUsu();
+        this.label_nombre.setText(usu.getNombre());
+        this.label_apellido.setText(usu.getApellido());
+        this.label_cedula.setText(usu.getCedula());
+        this.label_contraseña.setText("*************");
     }
     
 }

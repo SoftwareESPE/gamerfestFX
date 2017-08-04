@@ -19,12 +19,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import static servicios.Conexion.obtener;
 import static servicios.Operacion.actualizarAdmi;
+import static servicios.Validacion.validarLetras;
+import static servicios.Validacion.validarNumero;
 
-/**
- * FXML Controller class
- *
- * @author Marco Macias
- */
 public class EditarPerfilSuperAdminController implements Initializable {
     @FXML
     private AnchorPane PanelRoot;
@@ -44,13 +41,13 @@ public class EditarPerfilSuperAdminController implements Initializable {
     private JFXPasswordField txt_contraseña;
 
      @FXML
+    
     void activarBoton(KeyEvent event) {
         if(this.txt_nombre.getText().isEmpty() || this.txt_apellido.getText().isEmpty() || this.txt_cedula_.getText().isEmpty() || this.txt_contraseña.getText().isEmpty())
             this.btn_guardad.setDisable(true);
         else
             this.btn_guardad.setDisable(false);
     }
-    
     @FXML
     void Guardar(ActionEvent event) {
         Usuario usua = getUsu();
@@ -72,6 +69,10 @@ public class EditarPerfilSuperAdminController implements Initializable {
         this.txt_apellido.setText(usu.getApellido());
         this.txt_cedula_.setText(usu.getCedula());
         this.txt_contraseña.setText(usu.getContraseña());
-    }    
+        validarLetras(this.txt_apellido);
+        validarLetras(this.txt_nombre);
+        validarNumero(this.txt_cedula_);
+    } 
+    
     
 }

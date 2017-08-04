@@ -11,10 +11,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- *
- * @author josue
- */
 public class GamefestFx extends Application {
     
     @Override

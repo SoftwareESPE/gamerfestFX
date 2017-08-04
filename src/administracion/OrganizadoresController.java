@@ -5,6 +5,7 @@
  */
 package administracion;
 
+import static administracion.EditarOrganizadoresController.setMenuOrga;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableView;
 import java.io.IOException;
@@ -18,17 +19,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author Marco Macias
- */
 public class OrganizadoresController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
-      @FXML
+    
+    @FXML
     private AnchorPane PanelRoot;
     
     @FXML
@@ -46,6 +43,7 @@ public class OrganizadoresController implements Initializable {
     @FXML
     void Añadir(ActionEvent event) {
         try {
+            setMenuOrga(1);
            AnchorPane panel = FXMLLoader.load(getClass().getResource("EditarOrganizadores.fxml"));
            PanelRoot.getChildren().setAll(panel);
        } catch (IOException ex) {
@@ -61,7 +59,8 @@ public class OrganizadoresController implements Initializable {
     @FXML
     void Modificar(ActionEvent event) {
         try {
-           AnchorPane panel = FXMLLoader.load(getClass().getResource("EditarOrganizadores.fxml"));
+           setMenuOrga(0);
+            AnchorPane panel = FXMLLoader.load(getClass().getResource("EditarOrganizadores.fxml"));
            PanelRoot.getChildren().setAll(panel);
        } catch (IOException ex) {
            Logger.getLogger(SuperAdminController.class.getName()).log(Level.SEVERE, null, ex);

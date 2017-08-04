@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.EditarAdministradoresController">
    <children>
-      <Label layoutX="79.0" layoutY="49.0" text="Editar Perfil Administrador">
+      <Label fx:id="lbl_mensaje" layoutX="79.0" layoutY="49.0" text="Editar Perfil Administrador">
          <font>
             <Font size="27.0" />
          </font>

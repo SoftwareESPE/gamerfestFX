@@ -5,8 +5,7 @@
  */
 package administracion;
 
-import administracion.*;
-import static administracion.loginController.myControllers;
+import static administracion.EditarAdministradoresController.setMenuAdmin;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -20,20 +19,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
-/**
- * FXML Controller class
- *
- * @author Marco Macias
- */
 public class AdminController implements Initializable, ControledScreen {
-    private ScreenControled myController;
-    public static ScreenControled myControllers;
-    
-    public void setScreenParent(ScreenControled screenParent){
-        myController = screenParent;
-    }
-    
-    
+        
     @FXML
     private Pane buttonsPanel;
 
@@ -79,9 +66,14 @@ public class AdminController implements Initializable, ControledScreen {
         }
     }
 
+    public static ScreenControled myController;
+    
+    public void setScreenParent(ScreenControled screenParent){
+        myController = screenParent;
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        myControllers = myController;
         try {
            AnchorPane panel = FXMLLoader.load(getClass().getResource("PerfilAdministradores.fxml"));
            PanelRoot.getChildren().setAll(panel);

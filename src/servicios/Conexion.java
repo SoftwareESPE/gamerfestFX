@@ -9,10 +9,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author jerazo7
- */
 public class Conexion {
    private static Connection cnx = null;
    public static Connection obtener() throws SQLException, ClassNotFoundException {

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.PerfilAdministradoresController">
+<AnchorPane id="AnchorPane" fx:id="PanelRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="administracion.PerfilAdministradoresController">
    <children>
       <Label layoutX="151.0" layoutY="52.0" text="Perfil Administrador">
          <font>
@@ -34,11 +32,27 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtf_nombre" layoutX="203.0" layoutY="137.0" />
-      <JFXTextField fx:id="txtf_Apellido" layoutX="203.0" layoutY="179.0" />
-      <JFXTextField fx:id="txtf_Cedula" layoutX="203.0" layoutY="219.0" />
-      <JFXPasswordField fx:id="txtf_Contra" layoutX="203.0" layoutY="262.0" />
       <JFXButton fx:id="btn_modificar" layoutX="236.0" layoutY="330.0" onAction="#Modificar" style="-fx-background-color: #0a66d6;" text="Modificar" textFill="WHITE" />
+      <Label fx:id="label_nombre" layoutX="249.0" layoutY="136.0" prefHeight="27.0" prefWidth="173.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_apellido" layoutX="249.0" layoutY="178.0" prefHeight="27.0" prefWidth="173.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_cedula" layoutX="249.0" layoutY="218.0" prefHeight="27.0" prefWidth="173.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_contraseña" layoutX="249.0" layoutY="261.0" prefHeight="27.0" prefWidth="173.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
      
    </children>
 </AnchorPane>

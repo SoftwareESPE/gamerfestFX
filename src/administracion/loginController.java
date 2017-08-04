@@ -11,7 +11,6 @@ import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import static java.lang.Thread.sleep;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -21,12 +20,9 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import static servicios.Conexion.obtener;
 import static servicios.Operacion.recuperarUsu;
+import static servicios.Validacion.validarNumero;
 
 
-/**
- *
- * @author josue
- */
 public class loginController implements Initializable, ControledScreen {
     
     private ScreenControled myController;
@@ -69,8 +65,10 @@ public class loginController implements Initializable, ControledScreen {
                         mainContainer.loadScreen(InicioController.screen1ID, InicioController.screen1File);
                         SuperAdminController.myController.setScreen(InicioController.screen1ID);
                     }
-                    else if(usu.getTipo()==2)
-                        SuperAdminController.myController.setScreen(InicioController.screen2ID);
+                    else if(usu.getTipo()==2){
+                        mainContainer.loadScreen(InicioController.screen2ID, InicioController.screen2File);
+                        AdminController.myController.setScreen(InicioController.screen2ID);
+                    }
                     else
                         
                     valor = true;
@@ -83,6 +81,7 @@ public class loginController implements Initializable, ControledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         myControllers = myController;
+        validarNumero(this.txt_usu);
     }  
     
     @FXML
