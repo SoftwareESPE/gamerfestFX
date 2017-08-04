@@ -5,6 +5,13 @@
  */
 package clases;
 
+import administracion.Inscripciones;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author josue
@@ -24,7 +31,7 @@ public class Usuario {
         this.tipo = tipo;
         this.id = id;
     }
-
+    
     public int getId() {
         return id;
     }

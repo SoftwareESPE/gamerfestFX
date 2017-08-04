@@ -53,6 +53,7 @@ public class ReportesController implements Initializable {
     private JFXButton btn_generar;
     
     ObservableList<Inscripciones> Lista;
+    ObservableList<Inscripciones> Usuarios;
 
     @FXML
     void Cancelar(ActionEvent event) {
@@ -112,27 +113,34 @@ public class ReportesController implements Initializable {
                     Paragraph Titulo = new Paragraph("Reporte de administradores", fuente);
                     Titulo.setAlignment(1);
                     documento.add(Titulo);
-                    documento.add(new Paragraph(" "));
-                    documento.add(new Paragraph(" "));
-                    PdfPTable tabla = new PdfPTable(5);
-                    tabla.addCell("NOMBRE");
-                    tabla.addCell("APELLIDO");
-                    tabla.addCell("FECHA DE INSCRIPCION");
-                    tabla.addCell("JUEGO");
-                    tabla.addCell("VALOR");
-                    int total=0;
-                    for(int x=0; x<this.Lista.size();x++){
-                        tabla.addCell(this.Lista.get(x).getNombre());
-                        tabla.addCell(this.Lista.get(x).getApellido());
-                        tabla.addCell(this.Lista.get(x).getFecha());
-                        tabla.addCell(this.Lista.get(x).getJuego());
-                        tabla.addCell(this.Lista.get(x).getValor());
-                        total+=Float.parseFloat(this.Lista.get(x).getValor());
+                    for(int i=0;i<this.Usuarios.size();i++){
+                        documento.add(new Paragraph(" "));
+                        documento.add(new Paragraph(" "));
+                        PdfPTable tabla = new PdfPTable(5);
+                        documento.add(new Paragraph(this.Lista.get(i).getNom_usu()));
+                        documento.add(new Paragraph(this.Lista.get(i).getApellido_usu()));
+                        tabla.addCell("NOMBRE");
+                        tabla.addCell("APELLIDO");
+                        tabla.addCell("FECHA DE INSCRIPCION");
+                        tabla.addCell("JUEGO");
+                        tabla.addCell("VALOR");
+                        int total=0,inscritos=0;
+                        for(int x=0; x<this.Lista.size();x++){
+                            if(this.Lista.get(i).getUsu_id()==this.Lista.get(x).getUsu_id()){
+                                tabla.addCell(this.Lista.get(x).getNombre());
+                                tabla.addCell(this.Lista.get(x).getApellido());
+                                tabla.addCell(this.Lista.get(x).getFecha());
+                                tabla.addCell(this.Lista.get(x).getJuego());
+                                tabla.addCell(this.Lista.get(x).getValor());
+                                total+=Float.parseFloat(this.Lista.get(x).getValor());
+                                inscritos++;
+                            }
+                        }
+                        documento.add(new Paragraph("Cantidad de inscripciones: "+inscritos));
+                        documento.add(new Paragraph("Dinero Recaudado: "+total));
+                        documento.add(new Paragraph(" "));
+                        documento.add(tabla);
                     }
-                    documento.add(new Paragraph("Cantidad de inscripciones: "+String.valueOf(this.Lista.size())));
-                    documento.add(new Paragraph("Dinero Recaudado: "+total));
-                    documento.add(new Paragraph(" "));
-                    documento.add(tabla);
                 }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de resultados finales")){
                     documento.addTitle("Reporte de resultados finales");
                 }
@@ -169,6 +177,8 @@ public class ReportesController implements Initializable {
             InscripcionesController.llenarInformacion(servicios.Conexion.getCnx(), Lista);
         }else if(usu.getTipo()==2){
             this.cbox_tipo.getItems().add("Reporte de administradores");
+            this.Usuarios = FXCollections.observableArrayList();
+            //clases.Usuario.llenarInformacion(servicios.Conexion.getCnx(),);
         }else if(usu.getTipo()==3){
             this.cbox_tipo.getItems().add("Reporte de resultados finales");
         }
