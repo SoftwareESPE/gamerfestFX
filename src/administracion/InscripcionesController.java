@@ -74,7 +74,7 @@ public class InscripcionesController implements Initializable {
         try{
             
             Statement statement = conector.createStatement();
-            ResultSet resultado = statement.executeQuery("SELECT A.ins_id, A.ins_nombre, A.ins_apellido, A.jug_fechains, A.usuarios_usu_id, A.juegos_jue_id, B.jue_nombre, B.jue_valor FROM inscripciones A INNER JOIN juegos B ON(A.juegos_jue_id = B.jue_id)");
+            ResultSet resultado = statement.executeQuery("SELECT A.ins_id, A.ins_nombre, A.ins_apellido, A.jug_fechains, A.usuarios_usu_id, A.juegos_jue_id, B.jue_nombre, B.jue_valor, C.usu_nombre, C.usu_apellido, C.usu_cedula FROM inscripciones A INNER JOIN juegos B ON(A.juegos_jue_id = B.jue_id) INNER JOIN usuarios C ON(A.usuarios_usu_id = C.usu_id)");
                                                         
             
             while(resultado.next()){
@@ -85,7 +85,10 @@ public class InscripcionesController implements Initializable {
                                             resultado.getInt("usuarios_usu_id"),
                                             resultado.getInt("juegos_jue_id"),
                                             resultado.getString("jue_nombre"),
-                                            resultado.getString("jue_valor")));
+                                            resultado.getString("jue_valor"),
+                                            resultado.getString("usu_nombre"),
+                                            resultado.getString("usu_apellido"),
+                                            resultado.getString("usu_cedula")));
             }
         }catch(SQLException ex){
             ex.printStackTrace();

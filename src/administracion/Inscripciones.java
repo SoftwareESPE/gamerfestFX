@@ -20,8 +20,11 @@ public class Inscripciones implements Serializable{
     private int juego_id;
     private String juego;
     private String valor;
+    private String nom_usu;
+    private String apellido_usu;
+    private String ced_usu;
 
-    public Inscripciones(int ID, String nombre, String apellido, String fecha, int usu_id, int juego_id, String juego, String valor) {
+    public Inscripciones(int ID, String nombre, String apellido, String fecha, int usu_id, int juego_id, String juego, String valor, String nom_usu, String apellido_usu, String ced_usu) {
         this.ID = ID;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -30,50 +33,13 @@ public class Inscripciones implements Serializable{
         this.juego_id = juego_id;
         this.juego = juego;
         this.valor = valor;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    public String getJuego() {
-        return juego;
-    }
-
-    public void setJuego(String juego) {
-        this.juego = juego;
-    }
-
-    public void setValor(String valor) {
-        this.valor = valor;
-    }
-    
-    
-
-    public String getValor() {
-        return valor;
-    }
-    
-    
-
-    public void setUsu_id(int usu_id) {
-        this.usu_id = usu_id;
-    }
-
-    public void setJuego_id(int juego_id) {
-        this.juego_id = juego_id;
+        this.nom_usu = nom_usu;
+        this.apellido_usu = apellido_usu;
+        this.ced_usu = ced_usu;
     }
 
     public int getID() {
         return ID;
-    }
-
-    public int getUsu_id() {
-        return usu_id;
-    }
-
-    public int getJuego_id() {
-        return juego_id;
     }
 
     public String getNombre() {
@@ -88,16 +54,32 @@ public class Inscripciones implements Serializable{
         return fecha;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public int getUsu_id() {
+        return usu_id;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public int getJuego_id() {
+        return juego_id;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public String getJuego() {
+        return juego;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public String getNom_usu() {
+        return nom_usu;
+    }
+
+    public String getApellido_usu() {
+        return apellido_usu;
+    }
+
+    public String getCed_usu() {
+        return ced_usu;
     }
     
 }

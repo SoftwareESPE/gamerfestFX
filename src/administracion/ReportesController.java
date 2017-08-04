@@ -67,13 +67,13 @@ public class ReportesController implements Initializable {
         try 
         {
             if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de inscripciones")){
-                ruta="D:\\Reporte_inscripciones.PDF";
+                ruta="/reportes/Reporte_inscripciones.PDF";
             }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de administradores")){
-                ruta="D:\\Reporte_administradores.PDF";
+                ruta="/reportes/Reporte_administradores.PDF";
             }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de resultados finales")){
-                ruta="D:\\Reporte_resultado_final.PDF";
+                ruta="/reportes/Reporte_resultado_final.PDF";
             }
-            ficheroPdf = new FileOutputStream(ruta);
+            ficheroPdf = new FileOutputStream(System.getProperty("user.dir")+ruta);
             PdfWriter.getInstance(documento,ficheroPdf).setInitialLeading(20);
         }
         catch (Exception ex){
@@ -89,6 +89,30 @@ public class ReportesController implements Initializable {
                     documento.add(Titulo);
                     documento.add(new Paragraph(" "));
                     documento.add(new Paragraph(" "));
+                    PdfPTable tabla = new PdfPTable(5);
+                    tabla.addCell("NOMBRE");
+                    tabla.addCell("APELLIDO");
+                    tabla.addCell("FECHA DE INSCRIPCION");
+                    tabla.addCell("JUEGO");
+                    tabla.addCell("VALOR");
+                    int total=0;
+                    for(int x=0; x<this.Lista.size();x++){
+                        tabla.addCell(this.Lista.get(x).getNombre());
+                        tabla.addCell(this.Lista.get(x).getApellido());
+                        tabla.addCell(this.Lista.get(x).getFecha());
+                        tabla.addCell(this.Lista.get(x).getJuego());
+                        tabla.addCell(this.Lista.get(x).getValor());
+                        total+=Float.parseFloat(this.Lista.get(x).getValor());
+                    }
+                    documento.add(new Paragraph("Cantidad de inscripciones: "+String.valueOf(this.Lista.size())));
+                    documento.add(new Paragraph("Dinero Recaudado: "+total));
+                    documento.add(new Paragraph(" "));
+                    documento.add(tabla);
+                }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de administradores")){
+                    Paragraph Titulo = new Paragraph("Reporte de administradores", fuente);
+                    Titulo.setAlignment(1);
+                    documento.add(Titulo);
+                    documento.add(new Paragraph(" "));
                     documento.add(new Paragraph(" "));
                     PdfPTable tabla = new PdfPTable(5);
                     tabla.addCell("NOMBRE");
@@ -96,16 +120,19 @@ public class ReportesController implements Initializable {
                     tabla.addCell("FECHA DE INSCRIPCION");
                     tabla.addCell("JUEGO");
                     tabla.addCell("VALOR");
+                    int total=0;
                     for(int x=0; x<this.Lista.size();x++){
                         tabla.addCell(this.Lista.get(x).getNombre());
                         tabla.addCell(this.Lista.get(x).getApellido());
                         tabla.addCell(this.Lista.get(x).getFecha());
                         tabla.addCell(this.Lista.get(x).getJuego());
                         tabla.addCell(this.Lista.get(x).getValor());
+                        total+=Float.parseFloat(this.Lista.get(x).getValor());
                     }
+                    documento.add(new Paragraph("Cantidad de inscripciones: "+String.valueOf(this.Lista.size())));
+                    documento.add(new Paragraph("Dinero Recaudado: "+total));
+                    documento.add(new Paragraph(" "));
                     documento.add(tabla);
-                }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de administradores")){
-                    documento.addTitle("Reporte de administradores");
                 }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de resultados finales")){
                     documento.addTitle("Reporte de resultados finales");
                 }
