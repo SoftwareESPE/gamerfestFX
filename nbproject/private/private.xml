@@ -3,11 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/D:/Proyecto/gamerfestFX/src/servicios/Operacion.java</file>
-            <file>file:/D:/Proyecto/gamerfestFX/src/administracion/ReportesController.java</file>
-            <file>file:/D:/Proyecto/gamerfestFX/src/administracion/PerfilSuperAdminController.java</file>
-=======
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/CuartosController.java</file>
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/Inscripciones.java</file>
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/ReportesOrgController.java</file>
@@ -25,7 +20,6 @@
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/servicios/Conexion.java</file>
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/OrganizadoresController.java</file>
             <file>file:/C:/Users/HP-PRO/Desktop/Proyecto/gamerfestFX/src/administracion/AdminController.java</file>
->>>>>>> ef08b22f3713107a6776c8b865331b0e89c82047
         </group>
     </open-files>
 </project-private>
