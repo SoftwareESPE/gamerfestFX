@@ -6,6 +6,7 @@
 package administracion;
 
 import static administracion.EditarAdministradoresController.setMenuAdmin;
+import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableView;
 import java.io.IOException;
@@ -13,11 +14,17 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import static servicios.Operacion.tablaAdminis;
 
 public class AdministradoresController implements Initializable {
 
@@ -26,8 +33,9 @@ public class AdministradoresController implements Initializable {
      */
       @FXML
     private AnchorPane PanelRoot;
-    @FXML
-    private JFXTreeTableView<?> Table;
+    
+     @FXML
+    private TableView<Usuario> Table;
 
     @FXML
     private JFXButton btn_añadir;
@@ -37,6 +45,22 @@ public class AdministradoresController implements Initializable {
 
     @FXML
     private JFXButton btn_eliminar;
+    
+    ObservableList<Usuario> Lista;
+    
+    @FXML
+    private TableColumn<Usuario, String> nombre;
+
+    @FXML
+    private TableColumn<Usuario, String> apellido;
+
+    @FXML
+    private TableColumn<Usuario, String> cedula;
+
+    @FXML
+    private TableColumn<Usuario, String> contraseña;
+   
+
 
     @FXML
     void Añadir(ActionEvent event) {
@@ -65,7 +89,14 @@ public class AdministradoresController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.Lista = FXCollections.observableArrayList();
+        Lista = tablaAdminis(servicios.Conexion.getCnx(), Lista);
+        this.Table.setItems(Lista);
+        this.nombre.setCellValueFactory(new PropertyValueFactory<Usuario, String>("Nombre"));
+        this.apellido.setCellValueFactory(new PropertyValueFactory<Usuario, String>("Apellido"));
+        this.cedula.setCellValueFactory(new PropertyValueFactory<Usuario, String>("Cedula"));
+        this.contraseña.setCellValueFactory(new PropertyValueFactory<Usuario, String>("Contraseña"));
+        
     }    
     
 }
