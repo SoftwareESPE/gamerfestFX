@@ -5,6 +5,7 @@
  */
 package servicios;
 
+import administracion.Inscripciones;
 import clases.Usuario;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -15,8 +16,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 import javax.imageio.ImageIO;
 
 public class Operacion {
@@ -81,5 +84,21 @@ public class Operacion {
        }catch(SQLException ex){
          throw new SQLException(ex);
       }
+   }
+   
+   public static ObservableList<Usuario> tablaAdminis(Connection conector, ObservableList<Usuario> lista){
+       try{
+            
+            Statement statement = conector.createStatement();
+            ResultSet resultado = statement.executeQuery("SELECT usu_id, usu_nombre, usu_apellido, usu_cedula, usu_contraseña, tipo_usuario_tip_id FROM usuarios");            
+            while(resultado.next()){
+                lista.add(new Usuario(resultado.getString("usu_nombre"),resultado.getString("usu_apellido"),                                 
+                                      resultado.getString("usu_cedula"),resultado.getString("usu_contraseña"),
+                                      resultado.getInt("tipo_usuario_tip_id"),resultado.getInt("usu_id")));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+       return lista;
    }
 }

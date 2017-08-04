@@ -5,11 +5,13 @@
  */
 package clases;
 
+import java.io.Serializable;
+
 /**
  *
  * @author josue
  */
-public class Usuario {
+public class Usuario implements Serializable {
     private String nombre, apellido, cedula, contraseña;
     private int tipo, id;
 
@@ -24,6 +26,8 @@ public class Usuario {
         this.tipo = tipo;
         this.id = id;
     }
+
+    
 
     public int getId() {
         return id;
