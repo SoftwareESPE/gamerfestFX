@@ -115,6 +115,7 @@ public class ReportesController implements Initializable {
                     documento.add(new Paragraph(" "));
                     documento.add(new Paragraph(" "));
                     PdfPTable tabla = new PdfPTable(5);
+                    documento.add(new Paragraph(""));
                     tabla.addCell("NOMBRE");
                     tabla.addCell("APELLIDO");
                     tabla.addCell("FECHA DE INSCRIPCION");
