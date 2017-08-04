@@ -77,7 +77,13 @@ public class ReportesController implements Initializable {
         }
         try{
             documento.open();
-                //aqui agregamos todo el contenido del PDF...
+                if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de inscripciones")){
+                    documento.addTitle("Reporte de inscripciones");
+                }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de administradores")){
+                    documento.addTitle("Reporte de administradores");
+                }else if(this.cbox_tipo.getSelectionModel().getSelectedItem().equals("Reporte de resultados finales")){
+                    documento.addTitle("Reporte de resultados finales");
+                }
             documento.close();
         }catch(Exception ex){
             System.out.println(ex.toString());
