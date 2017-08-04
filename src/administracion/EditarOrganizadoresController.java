@@ -5,6 +5,8 @@
  */
 package administracion;
 
+import static administracion.loginController.getUsu;
+import clases.Usuario;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -13,13 +15,24 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
+import static servicios.Conexion.obtener;
+import static servicios.Operacion.actualizarAdmi;
+import static servicios.Operacion.guardarPersona;
+import static servicios.Validacion.validarLetras;
+import static servicios.Validacion.validarNumero;
 
 public class EditarOrganizadoresController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
-     @FXML
+    private static int menuOrga;
+    @FXML
+    private Label mensaje;
+    
+    @FXML
     private JFXTextField txtf_nombre;
 
     @FXML
@@ -36,11 +49,58 @@ public class EditarOrganizadoresController implements Initializable {
 
     @FXML
     void Guardar(ActionEvent event) {
-
+        Usuario usua =  getUsu();
+        usua.setApellido(this.txtf_Apellido.getText());
+        usua.setCedula(this.txtf_Cedula.getText());
+        usua.setNombre(this.txtf_nombre.getText());
+        usua.setContraseña(this.txtf_Contra.getText());
+        if(menuOrga==0){
+            try {
+                actualizarAdmi(obtener(), usua);
+            } catch (Exception ex) {
+                System.err.println("Error al guardar");;
+            }
+        }            
+        else{
+            usua.setTipo(3);
+            try{
+                guardarPersona(obtener(), usua);
+            }catch (Exception ex) {
+                System.err.println("Error al guardar");;
+            }
+            
+        }
     }
+    
+    @FXML
+    void activarBoton(KeyEvent event) {
+        if(this.txtf_nombre.getText().isEmpty() || this.txtf_Apellido.getText().isEmpty() || this.txtf_Cedula.getText().isEmpty() || this.txtf_Contra.getText().isEmpty())
+            this.btn_guardad.setDisable(true);
+        else
+            this.btn_guardad.setDisable(false);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        this.btn_guardad.setDisable(true);
+        if(menuOrga==0){
+            Usuario usu = getUsu();
+            this.txtf_nombre.setText(usu.getNombre());
+            this.txtf_Apellido.setText(usu.getApellido());
+            this.txtf_Cedula.setText(usu.getCedula());
+            this.txtf_Contra.setText(usu.getContraseña());
+        }else{
+            this.mensaje.setText("Agregar Organizador");
+        }        
+        validarLetras(this.txtf_Apellido);
+        validarLetras(this.txtf_nombre);
+        validarNumero(this.txtf_Cedula);
+    }   
+
+    public static void setMenuOrga(int menuOrga) {
+        EditarOrganizadoresController.menuOrga = menuOrga;
+    }
+    
+    
     
 }

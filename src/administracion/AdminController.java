@@ -5,6 +5,7 @@
  */
 package administracion;
 
+import static administracion.EditarAdministradoresController.setMenuAdmin;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
